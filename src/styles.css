@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+.topGap{
+    margin-top:30px;
+}
+
+.textCenter{
+    text-align:center;
+}
+.pCenter{
+    margin:0;
+    align-self:center;
+}
+.center{
+    display:flex;
+    justify-content:center;
+}
+body{
+    margin-bottom: 50px !important;
+}
+.fullHeight{
+    height: 100%;
+}
+.btnLeftMargin{
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+    .textCenter{
+        margin-top:10px;
+        padding: 2px 0;
+        
+    }
+}

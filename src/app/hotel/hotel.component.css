@@ -1,0 +1,41 @@
+.hotelWrapper {
+    margin-top:25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+.hotelImg{
+    width: 120px;
+}
+.mainImg{
+    height: 150px;
+    width: 225px; 
+    margin-right:10px
+}
+.row h5{
+    margin-top:10px;
+}
+
+@media only screen and (max-width: 992px) {
+   .mainImg{
+        height: 100px;
+        width: 175px; 
+        margin-right:5px
+    }  
+    .imgCenter{
+        margin-top: inherit;
+    }
+}
+@media only screen and (max-width: 767px) {
+   .mainImg{
+        width: 90%;
+        height: auto;
+    }  
+    .imgCenter{
+        margin-top: inherit;
+    }
+    .hotelWrapper {
+    text-align: center; 
+    margin:10px 5px;
+}
+}

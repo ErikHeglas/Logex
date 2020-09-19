@@ -1,0 +1,99 @@
+<div
+    *ngIf="showDetails === false"
+    class="row hotelWrapper"
+    (click)="onShowDetails()"
+>
+    <div
+        *ngIf="showDetails === false"
+        class="col-md-9"
+    >
+        <div class="row">
+            <div class="col-md-7">
+                <h5>Name: {{hotelData.name}}</h5>
+            </div>
+            <div class="col-md-5">
+                <h5>
+                    Start date: {{hotelData.date ? hotelData.date : 'Unavailable'}}
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <h5>City: {{hotelData.city}}</h5>
+            </div>
+            <div class="col-md-5">
+                <h5>PS Code: {{hotelData.psCode}}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Address: {{ hotelData.address}}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 imgCenter">
+        <div class="row justify-content-center">
+            <img
+                class="mainImg"
+                [src]="mainImg ? mainImg : noImg"
+            >
+        </div>
+    </div>
+</div>
+
+<div
+    *ngIf="showDetails === true"
+    class="row hotelWrapper"
+    (click)="onShowDetails()"
+>
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <h4>{{hotelData.name}}</h4>
+        </div>
+
+        <div class="row justify-content-center">
+            <h4>{{hotelData.date}}</h4>
+        </div>
+        <div class="row justify-content-center">
+            <h4>{{hotelData.city}}</h4>
+        </div>
+        <div class="row justify-content-center">
+            <h4>{{hotelData.psCode}}</h4>
+        </div>
+
+        <div class="row justify-content-center">
+            <h4>{{hotelData.address}}</h4>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <p
+                class="textCenter"
+                [innerHTML]="hotelData.description? hotelData.description:  'We are sorry, but we didnt find any description in your language'"
+            ></p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div
+                class="col-md-4 center"
+                style="margin-top:20px"
+                *ngFor="let img of hotelData.imgUrl"
+            >
+                <img
+                    style="width: 250px;"
+                    [src]="img.url"
+                >
+            </div>
+        </div>
+
+        <div class="row justify-content-center topGap">
+            <h5>
+                <a
+                    target="_blank"
+                    [href]="hotelData.pageUrl? hotelData.pageUrl : '#'"
+                >
+                    {{hotelData.pageUrl? hotelData.pageUrl : "Unavailable"}}
+                </a>
+            </h5>
+        </div>
+    </div>
+</div>
